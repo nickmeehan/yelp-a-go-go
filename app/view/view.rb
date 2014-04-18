@@ -25,6 +25,7 @@ class View
     puts "  Type 1 to search by Rating                   ".center(238)
     puts "  Type 2 to search by Distance                 ".center(238)
     puts "  Type 3 to search by Cuisine                  ".center(238)
+    puts "  Type 4 to exit the application               ".center(238)
     puts ""
     print_line
     user_input
@@ -47,7 +48,7 @@ class View
       puts "Distance: #{restaurant.distance}"
       puts "Rating:   #{restaurant.rating}"
       puts ""
-      #need phone etc
+      sleep(0.3)
     end
   end
 
