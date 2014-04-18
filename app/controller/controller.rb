@@ -1,10 +1,14 @@
 require_relative '../../db/migrate/config'
 require_relative '../view/view'
 require_relative '../models/restaurant'
+require_relative '../../lib/seed'
 
 class Controller
   def self.menu
-    user_choice = View.menu
+    location = View.menu
+    Seed.api_call location
+    Seed.populate
+    user_choice = View.user_choices
     run user_choice
   end
 
@@ -33,9 +37,13 @@ class Controller
       by_cuisine
     when "4"
       View.ending
+      return nil
     else
       "Invalid input"
     end
+    sleep(15)
+    Restaurant.destroy_all
+    menu
   end
 end
     # def self.by_price restaurant_id
