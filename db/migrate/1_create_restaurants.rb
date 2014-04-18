@@ -10,7 +10,7 @@ class CreateRestaurants < ActiveRecord::Migration
       #t.float :price_range
       t.float :distance
       t.float :rating
-      t.string :cuisine
+      # t.string :cuisine
       t.timestamps
     end
   end

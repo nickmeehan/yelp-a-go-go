@@ -1,6 +1,6 @@
 require_relative '../../db/migrate/config'
 
 class RestaurantCuisine < ActiveRecord::Base
-  belongs_to :cuisines
-  belongs_to  :restaurants
+  belongs_to :cuisine
+  belongs_to :restaurant
 end

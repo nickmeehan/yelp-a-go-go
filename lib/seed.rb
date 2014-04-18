@@ -31,18 +31,28 @@ YELP_OBJECT = JSON.parse( string_object )
 module Seed
   def self.populate
     YELP_OBJECT["businesses"].shift
-    YELP_OBJECT["businesses"].each do |restaurant|
-      Restaurant.create(
-        :address => restaurant["address1"],
-        :name => restaurant["name"],
-        :distance => restaurant["distance"],
-        :rating => restaurant["avg_rating"],
-        :phone => restaurant["phone"],
-        :cuisine => restaurant["categories"][0]["name"]
+    YELP_OBJECT["businesses"].each do |yelp_restaurant|
+      restaurant = Restaurant.create(
+        :address => yelp_restaurant["address1"],
+        :name => yelp_restaurant["name"],
+        :distance => yelp_restaurant["distance"],
+        :rating => yelp_restaurant["avg_rating"],
+        :phone => yelp_restaurant["phone"],
       )
+      yelp_restaurant["categories"].each do |category|
+        cuisine = Cuisine.find_or_create_by( name: category["name"])
+        restaurant.cuisines << cuisine
+      end
     end
   end
 end
+
+      #   if cuisine.all.include?(category)
+      #     this_restaurant.cuisine << cuisine.name.find_by(category)
+      #   else
+      #     this_restaurant.cuisine << category
+      #   end
+      # end
 
 # holder.shift
 
