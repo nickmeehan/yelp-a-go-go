@@ -1,4 +1,4 @@
-require_relative '../db/config'
+require_relative '../../db/migrate/config'
 
 class Restaurant < ActiveRecord::Base
   has_many :restaurant_cuisines
