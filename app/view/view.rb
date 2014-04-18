@@ -1,10 +1,10 @@
+
 class View
 
   def self.menu
     transition
     opening
     user_choices
-    ending
   end
 
   def self.opening
@@ -27,6 +27,7 @@ class View
     puts "  Type 3 to search by Cuisine                  ".center(238)
     puts ""
     print_line
+    user_input
   end
 
   def self.user_input
@@ -34,25 +35,33 @@ class View
   end
 
   def self.ending
-    puts "Brought to you by ayzzee, ak47, coops, and nickmee."
+    puts "Brought to you by ayyzee, ak47, coops, and nickmee."
   end
 
 
 
-  def self.display_restaurant_by_distance(restaurants)
+  def self.display_restaurant_by(restaurants)
     restaurants.each_with_index do |restaurant, index|
       puts "#{index + 1}."
       puts "Name:     #{restaurant.name}"
       puts "Distance: #{restaurant.distance}"
-      puts "Rating:   #{restaurant.avg_rating}"
+      puts "Rating:   #{restaurant.rating}"
+      puts ""
+      #need phone etc
     end
   end
 
-  def self.display_restaurant_by_cuisine(cuisines)
-    cuisines.each_with_index do |cuisine, index|
-      puts "#{index + 1}. #{cuisine.name}"
+  def self.display_restaurant_by_cuisine(restaurants)
+    restaurants.each_with_index do |restaurant, index|
+      puts "#{index + 1}."
+      puts "Name:     #{restaurant.name}"
+      puts "Cuisine:  #{restaurant.cuisine}"
+      puts "Distance: #{restaurant.distance}"
+      puts "Rating:   #{restaurant.rating}"
+      puts ""
     end
   end
+
   def self.transition
     clear_screen
     move_to_home
@@ -76,7 +85,9 @@ end
 
 
 
-View.menu
+#View.menu
+
+
 
 
 
