@@ -2,7 +2,7 @@
 ============
 
 #### Description:
-##### Yelp-a-go-go is a mini yelp for your terminal.
+Yelp-a-go-go is a mini yelp program for your terminal.
 
 
 #### The Gang
