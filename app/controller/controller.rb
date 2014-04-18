@@ -1,6 +1,7 @@
 require_relative '../../db/migrate/config'
 require_relative '../view/view'
 require_relative '../models/restaurant'
+
 class Controller
   def self.menu
     user_choice = View.menu
@@ -14,12 +15,12 @@ class Controller
 
   def self.by_rating
     # Restaurant.find_by_rating
-    View.display_restaurant_by(Restaurant.sort_by_rating)
+    View.display_restaurant_by Restaurant.sort_by_rating
   end
 
   def self.by_cuisine
     # Restaurant.find_by_rating
-    View.display_restaurant_by_cuisine(Restaurant.sort_by_cuisine)
+    View.display_restaurant_by_cuisine Restaurant.sort_by_cuisine
   end
 
   def self.run user_choice
@@ -30,8 +31,10 @@ class Controller
       by_distance
     when "3"
       by_cuisine
-    else
+    when "4"
       View.ending
+    else
+      "Invalid input"
     end
   end
 end
@@ -39,6 +42,7 @@ end
   #   #Restaurant.find_by_price_range
   # end
   #Controller.by_rating
-Controller.menu
+
+  Controller.menu
 
 
