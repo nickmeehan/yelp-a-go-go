@@ -1,10 +1,10 @@
 require_relative '../app/models/cuisine'
 require_relative '../app/models/restaurant'
 require_relative '../app/models/restaurant_cuisine'
-require 'Faker'
+
 
 # module YelpDataImporter
-#   def self.import(filename=File.dirname(__FILE__) + "/../db/data/students.csv")
+#   def self.import(filename=File.dirname(__FILE__) + "/../db/data/yelp_data.rb")
 #     field_names = nil
 #     YelpData.transaction do
 #       File.open(filename).each do |line|
@@ -21,6 +21,3 @@ require 'Faker'
 # end
 
 
-module YelpDataImporter
-  def
-end

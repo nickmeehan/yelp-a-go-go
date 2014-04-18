@@ -5,15 +5,11 @@ class CreateRestaurants < ActiveRecord::Migration
     create_table :restaurants do |t|
       t.string :name
       t.list :address
-      t.list :city
-      t.list :state
-
-
       t.string :phone
-      t.datetime :hours_of_op
-      t.float :price
+      #t.datetime :hours_of_op
+      #t.float :price_range
       t.float :ratings
-
+      t.string :category
     end
   end
 end
