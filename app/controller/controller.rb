@@ -9,17 +9,14 @@ class Controller
   end
 
   def self.by_distance
-    # Restaurant.find_by_distance
     View.display_restaurant_by Restaurant.sort_by_distance
   end
 
   def self.by_rating
-    # Restaurant.find_by_rating
     View.display_restaurant_by Restaurant.sort_by_rating
   end
 
   def self.by_cuisine
-    # Restaurant.find_by_rating
     View.display_restaurant_by_cuisine Restaurant.sort_by_cuisine
   end
 
@@ -38,11 +35,8 @@ class Controller
     end
   end
 end
-    # def self.by_price restaurant_id
-  #   #Restaurant.find_by_price_range
-  # end
-  #Controller.by_rating
 
-  Controller.menu
+# Running the program:
+Controller.menu
 
 

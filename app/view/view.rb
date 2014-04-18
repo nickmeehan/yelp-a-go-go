@@ -82,13 +82,6 @@ class View
 end
 
 
-# View.display_restaurant_by_distance(Restaurants.sort_by_distance)
-
-
-
-#View.menu
-
-
 
 
 
